@@ -1,0 +1,137 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+import '../gen/colors.gen.dart';
+
+class TextFontStyle {
+  TextFontStyle._();
+
+  // Inter
+  static final textStyle20c212B36Inter600 = GoogleFonts.inter(
+    color: AppColors.cF0F0F0,
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w600,
+  );
+static final textStyle14c595959Inter400 = GoogleFonts.inter(
+    color: AppColors.c595959,
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w400,
+  );
+static final textStyle14c595959Inter600 = GoogleFonts.inter(
+    color: AppColors.c595959,
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w600,
+  );
+static final textStyle12c595959Inter500 = GoogleFonts.inter(
+    color: AppColors.c595959,
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w500,
+  );
+static final textStyle12c595959Inter400 = GoogleFonts.inter(
+    color: AppColors.c595959,
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w400,
+  );
+  static final textStyle10c595959Inter400 = GoogleFonts.inter(
+    color: AppColors.c595959,
+    fontSize: 10.sp,
+    fontWeight: FontWeight.w400,
+  );
+static final textStyle12c262626Inter400 = GoogleFonts.inter(
+    color: AppColors.c262626,
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w400,
+  );
+static final textStyle24c000000Inter600 = GoogleFonts.inter(
+    color: AppColors.c000000,
+    fontSize: 24.sp,
+    fontWeight: FontWeight.w600,
+  );
+static final textStyle20c000000Inter600 = GoogleFonts.inter(
+    color: AppColors.c000000,
+    fontSize: 20.sp,
+    fontWeight: FontWeight.w600,
+  );
+static final textStyle12c8E8E8EInter400 = GoogleFonts.inter(
+    color: AppColors.c8E8E8E,
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w400,
+  );
+static final textStyle14c35D239Inter500 = GoogleFonts.inter(
+    color: AppColors.c35D239,
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w500,
+  );
+static final textStyle14c201F22Inter400 = GoogleFonts.inter(
+    color: AppColors.c201F22,
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w400,
+  );
+static final textStyle16c000000Inter500 = GoogleFonts.inter(
+    color: AppColors.c000000,
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w500,
+  );
+static final textStyle14c262626Inter400 = GoogleFonts.inter(
+    color: AppColors.c262626,
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w400,
+  );
+static final textStyle12c333333Inter400 = GoogleFonts.inter(
+    color: AppColors.c333333,
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w400,
+  );
+static final textStyle12c333232Inter400 = GoogleFonts.inter(
+    color: AppColors.c333232,
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w400,
+  );
+static final textStyle14c333232Inter400 = GoogleFonts.inter(
+    color: AppColors.c333232,
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w400,
+  );
+static final textStyle20c111111Inter600 = GoogleFonts.inter(
+    color: AppColors.c111111,
+    fontSize: 20.sp,
+    fontWeight: FontWeight.w600,
+  );
+static final textStyle12c525252Inter400 = GoogleFonts.inter(
+    color: AppColors.c525252,
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w400,
+  );
+static final textStyle20c000000Inter500 = GoogleFonts.inter(
+    color: AppColors.c000000,
+    fontSize: 20.sp,
+    fontWeight: FontWeight.w500,
+  );
+static final textStyle16cFFFFFFInter500 = GoogleFonts.inter(
+    color: AppColors.cFFFFFF,
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w500,
+  );
+static final textStyle16c121212Inter500 = GoogleFonts.inter(
+    color: AppColors.c121212,
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w500,
+  );
+static final textStyle18c212121Poppins400 = GoogleFonts.poppins(
+    color: AppColors.c212121,
+    fontSize: 18.sp,
+    fontWeight: FontWeight.w400,
+  );
+static final textStyle16c262626Inter500 = GoogleFonts.poppins(
+    color: AppColors.c262626,
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w500,
+  );
+static final textStyle16c121212Inter400 = GoogleFonts.poppins(
+    color: AppColors.c121212,
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w400,
+  );
+
+}

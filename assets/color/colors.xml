@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<colors>
+<color name="allPrimaryColor">#FFFFFFFF</color>
+
+<color name="cF0F0F0">#FFF0F0F0</color>
+<color name="cFFFFFF">#FFFFFFFF</color>
+<color name="cD9D9D9">#FFD9D9D9</color>
+<color name="c595959">#FF595959</color>
+<color name="c6B7280">#FF6B7280</color>
+<color name="cBFBFBF">#FFBFBFBF</color>
+<color name="c000000">#FF000000</color>
+<color name="cF8F8F8">#FFF8F8F8</color>
+<color name="cE3E7EC">#FFE3E7EC</color>
+<color name="c8E8E8E">#FF8E8E8E</color>
+<color name="cBDD8FF">#FFBDD8FF</color>
+<color name="c008000">#FF008000</color>
+<color name="cE6FAE7">#FFE6FAE7</color>
+<color name="c008000">#FF008000</color>
+<color name="c35D239">#FF35D239</color>
+<color name="cDEDDDE">#FFDEDDDE</color>
+<color name="c201F22">#FF201F22</color>
+<color name="cF2F2F2">#FFF2F2F2</color>
+<color name="c333232">#FF333232</color>
+<color name="cE1E1E1">#FFE1E1E1</color>
+<color name="c262626">#FF262626</color>
+<color name="c333333">#FF333333</color>
+<color name="c111111">#FF111111</color>
+<color name="c525252">#FF525252</color>
+<color name="cFF1F1F">#FFFF1F1F</color>
+<color name="cCDCDCD">#FFCDCDCD</color>
+<color name="c121212">#FF121212</color>
+<color name="c212121">#FF212121</color>
+
+</colors>
