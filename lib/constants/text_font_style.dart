@@ -133,5 +133,15 @@ static final textStyle16c121212Inter400 = GoogleFonts.poppins(
     fontSize: 16.sp,
     fontWeight: FontWeight.w400,
   );
+static final textStyle16c121212Poppins400 = GoogleFonts.poppins(
+    color: AppColors.c121212,
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w400,
+  );
+static final textStyle16c121212Poppins600 = GoogleFonts.poppins(
+    color: AppColors.c121212,
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w600,
+  );
 
 }

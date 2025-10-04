@@ -53,6 +53,9 @@ class $AssetsIconsGen {
   AssetGenImage get contractIcon =>
       const AssetGenImage('assets/icons/contract_icon.png');
 
+  /// File path: assets/icons/forward.png
+  AssetGenImage get forward => const AssetGenImage('assets/icons/forward.png');
+
   /// File path: assets/icons/loccation_icon.png
   AssetGenImage get loccationIcon =>
       const AssetGenImage('assets/icons/loccation_icon.png');
@@ -95,6 +98,7 @@ class $AssetsIconsGen {
     cameraIcon,
     circleIcon,
     contractIcon,
+    forward,
     loccationIcon,
     messageIcon,
     notificationIcon,

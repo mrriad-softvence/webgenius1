@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:webgenius/constants/text_font_style.dart';
-import 'package:webgenius/fetures/product_details/presentation/widgets/custom_button.dart';
-import 'package:webgenius/helper/ui_helper.dart';
-
-import '../../../gen/assets.gen.dart';
+import 'package:webgenius/fetures/mycart/presentation/widgets/cart_item.dart';
 import '../../../gen/colors.gen.dart';
+import '../../../constants/text_font_style.dart';
+import '../../../helper/ui_helper.dart';
 import '../../vendor_profile/presentation/widgets/custom_appbar.dart';
+import '../../../fetures/product_details/presentation/widgets/custom_button.dart';
+import '../../../gen/assets.gen.dart';
+import '../model/cart_model.dart';
 
 class MycartScreen extends StatefulWidget {
   const MycartScreen({super.key});
@@ -16,47 +17,74 @@ class MycartScreen extends StatefulWidget {
 }
 
 class _MycartScreenState extends State<MycartScreen> {
-  List<int> _counts = [];
-
-  final List<Map<String, String>> _productList = [
-    {
-      "image": Assets.images.foodItem1.path,
-      "name": "Sarah's Kitchen",
-      "desc": "Experience authentic taste of home-cooked meals",
-      "dish": "Ruti dal vat",
-      "rating": "4.5",
-      "price": "100",
-    },
-    {
-      "image": Assets.images.foodItem1.path,
-      "name": "Arpita Saha",
-      "desc": "Fresh & healthy daily meals",
-      "dish": "Veg Curry",
-      "rating": "4.2",
-      "price": "120",
-    },
-  ];
+  List<CartItem> _cartItems = [];
+  List<bool> _isExpanded = [];
+  double deliveryCharge = 0;
 
   @override
   void initState() {
     super.initState();
-    _counts = List.filled(_productList.length, 1);
+    _cartItems = [
+      CartItem(
+        image: Assets.images.foodItem1.path,
+        name: "Sarah's Kitchen",
+        description: "Experience authentic taste of home-cooked meals, made with love and fresh ingredients every day.",
+        dish: "Ruti dal vat",
+        rating: 4.5,
+        price: 100,
+      ),
+      CartItem(
+        image: Assets.images.foodItem1.path,
+        name: "Sarah's Kitchen",
+        description: "Experience authentic taste of home-cooked meals, made with love and fresh ingredients every day.",
+        dish: "Ruti dal vat",
+        rating: 4.5,
+        price: 100,
+      ),
+      CartItem(
+        image: Assets.images.foodItem1.path,
+        name: "Sarah's Kitchen",
+        description: "Experience authentic taste of home-cooked meals, made with love and fresh ingredients every day.",
+        dish: "Ruti dal vat",
+        rating: 4.5,
+        price: 100,
+      ),
+      CartItem(
+        image: Assets.images.resurantItem.path,
+        name: "Arpita Saha",
+        description: "Fresh & healthy daily meals with locally sourced vegetables and home-made spices for authentic flavor.",
+        dish: "Veg Curry",
+        rating: 4.2,
+        price: 120,
+      ),
+    ];
+    _isExpanded = List.filled(_cartItems.length, false);
+
+    Future.delayed( Duration(milliseconds: 500), () {
+      setState(() => deliveryCharge = 30);
+    });
   }
 
   void _increment(int index) {
-    setState(() {
-      _counts[index]++;
-    });
+    setState(() => _cartItems[index].quantity++);
   }
 
   void _decrement(int index) {
     setState(() {
-      if (_counts[index] > 0) _counts[index]--;
+      if (_cartItems[index].quantity > 0) _cartItems[index].quantity--;
     });
   }
 
+  void _toggleDescription(int index) {
+    setState(() => _isExpanded[index] = !_isExpanded[index]);
+  }
+
+  int get subtotal => _cartItems.fold(0, (total, item) => total + item.price * item.quantity);
+
   @override
   Widget build(BuildContext context) {
+    final visibleItems = _cartItems.where((item) => item.quantity > 0).toList();
+
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -64,234 +92,84 @@ class _MycartScreenState extends State<MycartScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const CustomAppbar(),
+              CustomAppbar(),
 
-              // Header Row
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    "My Cart",
-                    style: TextFontStyle.textStyle18c212121Poppins400,
-                  ),
+                  Text("My Cart", style: TextFontStyle.textStyle18c212121Poppins400),
                   TextButton(
                     onPressed: () {},
-                    child: Text(
-                      "See All",
-                      style: TextFontStyle.textStyle16c121212Inter500,
-                    ),
+                    child: Text("See All", style: TextFontStyle.textStyle16c121212Inter500),
                   ),
                 ],
               ),
 
-              // List of Cart Items
               Flexible(
-                child: ListView.builder(
+                child: visibleItems.isEmpty
+                    ? const Center(child: Text("Your cart is empty"))
+                    : ListView.builder(
                   padding: EdgeInsets.zero,
-                  itemCount: _productList.length,
+                  itemCount: visibleItems.length,
                   itemBuilder: (context, index) {
-                    final item = _productList[index];
-                    final count = _counts[index];
-                    return Padding(
-                      padding: EdgeInsets.only(bottom: 12.h),
-                      child: Container(
-                        height: 94.h,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(8.r),
-                          color: AppColors.cFFFFFF,
-                        ),
-                        child: Padding(
-                          padding: EdgeInsets.all(10),
-                          child: Row(
-                            children: [
-                              // Image
-                              Container(
-                                height: 70.h,
-                                width: 70.w,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(12.r),
-                                  image: DecorationImage(
-                                    image: AssetImage(item["image"]!),
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                              ),
-                              UIHelper.horizontalSpace(12.w),
-
-                              // Details
-                              Expanded(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Row(
-                                      mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Text(
-                                          item["name"]!,
-                                          style: TextFontStyle
-                                              .textStyle16c262626Inter500,
-                                        ),
-                                        Container(
-                                          height: 16.h,
-                                          width: 16.w,
-                                          decoration: BoxDecoration(
-                                            color: AppColors.cFFFFFF,
-                                            borderRadius:
-                                            BorderRadius.circular(6.r),
-                                            border: Border.all(
-                                                color: AppColors.c008000,
-                                                width: 3),
-                                          ),
-                                          child: Center(
-                                            child: Image.asset(
-                                              Assets.icons.circleIcon.path,
-                                              height: 6.h,
-                                              width: 6.w,
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                    Text(
-                                      item["desc"]!,
-                                      style: TextFontStyle
-                                          .textStyle10c595959Inter400,
-                                      maxLines: 1,
-                                      overflow: TextOverflow.ellipsis,
-                                    ),
-                                    Row(
-                                      children: [
-                                        Text(
-                                          item["dish"]!,
-                                          style: TextFontStyle
-                                              .textStyle10c595959Inter400,
-                                        ),
-                                        Row(
-                                          children: [
-                                            Image.asset(
-                                              Assets.icons.startIcon.path,
-                                              width: 16.w,
-                                              height: 16.h,
-                                            ),
-                                            Text(
-                                              item["rating"]!,
-                                              style: TextFontStyle
-                                                  .textStyle12c595959Inter400,
-                                            ),
-                                          ],
-                                        ),
-                                      ],
-                                    ),
-                                    Row(
-                                      mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Text(
-                                          "₹${item["price"]!}",
-                                          style: TextFontStyle
-                                              .textStyle12c262626Inter400,
-                                        ),
-                                        Container(
-                                          height: 28.h,
-                                          width: 74.w,
-                                          decoration: BoxDecoration(
-                                            borderRadius:
-                                            BorderRadius.circular(4.r),
-                                            border: Border.all(
-                                              width: 1.w,
-                                              color: AppColors.cD9D9D9,
-                                            ),
-                                            color: AppColors.cFFFFFF,
-                                            boxShadow: [
-                                              BoxShadow(
-                                                color: AppColors.c000000
-                                                    .withValues(alpha: 0.1),
-                                                spreadRadius: 1.r,
-                                                blurRadius: 3.r,
-                                                offset: const Offset(0, 1),
-                                              ),
-                                            ],
-                                          ),
-                                          child: Row(
-                                            mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                            children: [
-                                              InkWell(
-                                                onTap: () => _decrement(index),
-                                                child: Padding(
-                                                  padding: EdgeInsets.symmetric(
-                                                      horizontal: 6.w),
-                                                  child: Image.asset(
-                                                    Assets.icons.minus.path,
-                                                    width: 12.w,
-                                                    height: 12.h,
-                                                  ),
-                                                ),
-                                              ),
-                                              Container(
-                                                decoration: BoxDecoration(
-                                                  border: Border.symmetric(
-                                                    vertical: BorderSide(
-                                                        width: 1.w,
-                                                        color:
-                                                        AppColors.cD9D9D9),
-                                                  ),
-                                                ),
-                                                child: Padding(
-                                                  padding: EdgeInsets.symmetric(
-                                                      horizontal: 4.w),
-                                                  child: Text(
-                                                    count < 10
-                                                        ? "0$count"
-                                                        : "$count",
-                                                    style: TextFontStyle
-                                                        .textStyle12c595959Inter400,
-                                                  ),
-                                                ),
-                                              ),
-                                              InkWell(
-                                                onTap: () => _increment(index),
-                                                child: Padding(
-                                                  padding: EdgeInsets.symmetric(
-                                                      horizontal: 6.w),
-                                                  child: Image.asset(
-                                                    Assets.icons.plus.path,
-                                                    width: 12.w,
-                                                    height: 12.h,
-                                                  ),
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
+                    final actualIndex = _cartItems.indexOf(visibleItems[index]);
+                    return CartItemWidget(
+                      item: _cartItems[actualIndex],
+                      onIncrement: () => _increment(actualIndex),
+                      onDecrement: () => _decrement(actualIndex),
+                      onToggleDescription: () => _toggleDescription(actualIndex),
+                      isExpanded: _isExpanded[actualIndex],
                     );
                   },
                 ),
-
-
               ),
 
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text("Add more item"),
-                  IconButton(onPressed: () {
-                    
-                  }, icon: Image.asset(Assets.icons.f))
+                  Text("Add more item", style: TextFontStyle.textStyle16c121212Poppins400),
+                  IconButton(
+                    onPressed: () {},
+                    icon: Image.asset(Assets.icons.forward.path, width: 24.w, height: 24.h),
+                  ),
                 ],
               ),
-              
-              CustomButton(text: "Continue")
+
+              Divider(color: AppColors.cBDBDBD, height: 1.h),
+              UIHelper.verticalSpace(20.h),
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text("Subtotal", style: TextFontStyle.textStyle16c121212Poppins400),
+                  Text("₹$subtotal", style: TextFontStyle.textStyle16c121212Poppins400),
+                ],
+              ),
+              UIHelper.verticalSpace(10.h),
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text("Delivery", style: TextFontStyle.textStyle16c121212Poppins400),
+                  Text("₹${deliveryCharge.toInt()}", style: TextFontStyle.textStyle16c121212Poppins400),
+                ],
+              ),
+              UIHelper.verticalSpace(10.h),
+
+              Divider(color: AppColors.cBDBDBD, height: 1.h),
+              UIHelper.verticalSpace(16.h),
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text("Total (incl. VAT)", style: TextFontStyle.textStyle16c121212Poppins600),
+                  Text("₹${subtotal + deliveryCharge.toInt()}", style: TextFontStyle.textStyle16c121212Poppins400),
+                ],
+              ),
+
+              UIHelper.verticalSpace(35.h),
+
+              const CustomButton(text: "Continue"),
             ],
           ),
         ),
