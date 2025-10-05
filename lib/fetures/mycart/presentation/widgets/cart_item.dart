@@ -33,6 +33,14 @@ class CartItemWidget extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8.r),
           color: AppColors.cFFFFFF,
+          boxShadow: [
+            BoxShadow(
+              color: AppColors.c5A6CEA.withValues(alpha: 0.07),
+              offset: Offset(12, 26),
+              blurRadius: 25,
+              spreadRadius: 0,
+            ),
+          ],
         ),
         child: Padding(
           padding: EdgeInsets.all(10),
@@ -142,7 +150,7 @@ class CartItemWidget extends StatelessWidget {
                       children: [
                         Text("₹$totalPrice", style: TextFontStyle.textStyle12c262626Inter400),
                         Container(
-                          height: 28.h,
+                          height: 20.h,
                           width: 76.w,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(4.r),

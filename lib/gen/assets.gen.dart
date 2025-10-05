@@ -53,12 +53,20 @@ class $AssetsIconsGen {
   AssetGenImage get contractIcon =>
       const AssetGenImage('assets/icons/contract_icon.png');
 
+  /// File path: assets/icons/delivery_icon.png
+  AssetGenImage get deliveryIcon =>
+      const AssetGenImage('assets/icons/delivery_icon.png');
+
   /// File path: assets/icons/forward.png
   AssetGenImage get forward => const AssetGenImage('assets/icons/forward.png');
 
   /// File path: assets/icons/loccation_icon.png
   AssetGenImage get loccationIcon =>
       const AssetGenImage('assets/icons/loccation_icon.png');
+
+  /// File path: assets/icons/mage_eye-off_icon.png
+  AssetGenImage get mageEyeOffIcon =>
+      const AssetGenImage('assets/icons/mage_eye-off_icon.png');
 
   /// File path: assets/icons/message_icon.png
   AssetGenImage get messageIcon =>
@@ -67,6 +75,10 @@ class $AssetsIconsGen {
   /// File path: assets/icons/notification_icon.png
   AssetGenImage get notificationIcon =>
       const AssetGenImage('assets/icons/notification_icon.png');
+
+  /// File path: assets/icons/order_icon.png
+  AssetGenImage get orderIcon =>
+      const AssetGenImage('assets/icons/order_icon.png');
 
   /// File path: assets/icons/settings_icon.png
   AssetGenImage get settingsIcon =>
@@ -88,6 +100,10 @@ class $AssetsIconsGen {
   AssetGenImage get timeIcon =>
       const AssetGenImage('assets/icons/time_icon.png');
 
+  /// File path: assets/icons/vendor_icon.png
+  AssetGenImage get vendorIcon =>
+      const AssetGenImage('assets/icons/vendor_icon.png');
+
   /// List of all assets
   List<dynamic> get values => [
     minus,
@@ -98,20 +114,28 @@ class $AssetsIconsGen {
     cameraIcon,
     circleIcon,
     contractIcon,
+    deliveryIcon,
     forward,
     loccationIcon,
+    mageEyeOffIcon,
     messageIcon,
     notificationIcon,
+    orderIcon,
     settingsIcon,
     startGroupIcon,
     startIcon,
     tiffynLogo,
     timeIcon,
+    vendorIcon,
   ];
 }
 
 class $AssetsImagesGen {
   const $AssetsImagesGen();
+
+  /// File path: assets/images/FinalTiffynLogo 1.png
+  AssetGenImage get finalTiffynLogo1 =>
+      const AssetGenImage('assets/images/FinalTiffynLogo 1.png');
 
   /// File path: assets/images/food_item1.png
   AssetGenImage get foodItem1 =>
@@ -139,6 +163,7 @@ class $AssetsImagesGen {
 
   /// List of all assets
   List<AssetGenImage> get values => [
+    finalTiffynLogo1,
     foodItem1,
     productItem,
     profileCover,

@@ -49,14 +49,6 @@ class _MycartScreenState extends State<MycartScreen> {
         rating: 4.5,
         price: 100,
       ),
-      CartItem(
-        image: Assets.images.resurantItem.path,
-        name: "Arpita Saha",
-        description: "Fresh & healthy daily meals with locally sourced vegetables and home-made spices for authentic flavor.",
-        dish: "Veg Curry",
-        rating: 4.2,
-        price: 120,
-      ),
     ];
     _isExpanded = List.filled(_cartItems.length, false);
 
@@ -86,6 +78,7 @@ class _MycartScreenState extends State<MycartScreen> {
     final visibleItems = _cartItems.where((item) => item.quantity > 0).toList();
 
     return Scaffold(
+      backgroundColor: AppColors.cFFFFFF,
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 20.sp),
