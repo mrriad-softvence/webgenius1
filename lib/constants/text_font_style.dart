@@ -153,5 +153,25 @@ static final textStyle16c121212Poppins600 = GoogleFonts.poppins(
     fontSize: 14.sp,
     fontWeight: FontWeight.w600,
   );
+static final textStyle12cBA7600Inter400 = GoogleFonts.poppins(
+    color: AppColors.cBA7600,
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w400,
+  );
+static final textStyle16c1F1F1FInter700 = GoogleFonts.poppins(
+    color: AppColors.c1F1F1F,
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w700,
+  );
+static final textStyle14c374151Inter500 = GoogleFonts.inter(
+    color: AppColors.c374151,
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w500,
+  );
+static final textStyle14c595959Inter500 = GoogleFonts.inter(
+    color: AppColors.c595959,
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w500,
+  );
 
 }

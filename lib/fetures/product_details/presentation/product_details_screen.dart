@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:webgenius/constants/text_font_style.dart';
-import 'package:webgenius/fetures/product_details/presentation/widgets/custom_button.dart';
+import 'package:webgenius/common_widgets/custom_button.dart';
 import 'package:webgenius/fetures/vendor_profile/presentation/widgets/custom_appbar.dart';
 import 'package:webgenius/helper/ui_helper.dart';
 
@@ -219,7 +219,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
 
             UIHelper.verticalSpace(32.h),
 
-            CustomButton(text: 'Add to Cart'),
+            CustomButton(text: 'Add to Cart', onTap: () {  },),
 
             Row(
               children: [

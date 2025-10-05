@@ -60,6 +60,10 @@ class $AssetsIconsGen {
   /// File path: assets/icons/forward.png
   AssetGenImage get forward => const AssetGenImage('assets/icons/forward.png');
 
+  /// File path: assets/icons/google_icon.png
+  AssetGenImage get googleIcon =>
+      const AssetGenImage('assets/icons/google_icon.png');
+
   /// File path: assets/icons/loccation_icon.png
   AssetGenImage get loccationIcon =>
       const AssetGenImage('assets/icons/loccation_icon.png');
@@ -116,6 +120,7 @@ class $AssetsIconsGen {
     contractIcon,
     deliveryIcon,
     forward,
+    googleIcon,
     loccationIcon,
     mageEyeOffIcon,
     messageIcon,

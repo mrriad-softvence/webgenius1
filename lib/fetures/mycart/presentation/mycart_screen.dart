@@ -5,7 +5,7 @@ import '../../../gen/colors.gen.dart';
 import '../../../constants/text_font_style.dart';
 import '../../../helper/ui_helper.dart';
 import '../../vendor_profile/presentation/widgets/custom_appbar.dart';
-import '../../../fetures/product_details/presentation/widgets/custom_button.dart';
+import '../../../common_widgets/custom_button.dart';
 import '../../../gen/assets.gen.dart';
 import '../model/cart_model.dart';
 
@@ -162,7 +162,7 @@ class _MycartScreenState extends State<MycartScreen> {
 
               UIHelper.verticalSpace(35.h),
 
-              const CustomButton(text: "Continue"),
+               CustomButton(text: "Continue", onTap: () {  },),
             ],
           ),
         ),
