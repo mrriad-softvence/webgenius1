@@ -7,6 +7,7 @@ import 'package:webgenius/helper/ui_helper.dart';
 import '../../../common_widgets/custom_textform_field.dart';
 import '../../../gen/assets.gen.dart';
 import '../../../gen/colors.gen.dart';
+import '../../signup/presentation/signup_screen1.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -68,14 +69,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 text: "Email or Username",
                 controller: _emailController,
                 hintText: 'Enter your mail or phone',
-                prefixIcon: Padding(
-                  padding: EdgeInsets.all(7.w),
-                  child: Image.asset(
-                    Assets.icons.messageIcon.path,
-                    color: AppColors.c595959,
-                    height: 16.h,
-                    width: 16.w,
-                  ),
+                prefixIcon: Image.asset(
+                  Assets.icons.messageIcon.path,
+                  color: AppColors.c595959,
                 ),
               ),
 
@@ -85,14 +81,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 controller: _passwordController,
                 hintText: 'Enter your password',
                 obscureText: !isExpanded,
-                prefixIcon: Padding(
-                  padding: EdgeInsets.all(7.w),
-                  child: Image.asset(
-                    Assets.icons.messageIcon.path,
-                    color: AppColors.c595959,
-                    height: 16.h,
-                    width: 16.w,
-                  ),
+                prefixIcon: Image.asset(
+                  Assets.icons.lockIcon.path,
                 ),
                 suffixIcon: GestureDetector(
                   onTap: () {
@@ -101,7 +91,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     });
                   },
                   child: Icon(
-                    isExpanded ? Icons.visibility : Icons.visibility_off,
+                    isExpanded ? Icons.visibility : Icons.visibility_off_sharp,
                     color: AppColors.c595959,
                   ),
                 ),
@@ -122,7 +112,14 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               UIHelper.verticalSpace(24.h),
 
-              CustomButton(text: "Log in", onTap: () {  },),
+              CustomButton(text: "Log in", onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => SignupScreen1(),
+                  ),
+                );
+              },),
 
               UIHelper.verticalSpace(16.h),
 
@@ -167,14 +164,11 @@ class _LoginScreenState extends State<LoginScreen> {
                     style: TextFontStyle.textStyle12c595959Inter500,
                   ),
                   GestureDetector(
+
                     child: Text(
                       "Sign up",
                       style: TextFontStyle.textStyle12cFF1414Inter500,
                     ),
-                  ),
-                  Text(
-                    " for tiffin",
-                    style: TextFontStyle.textStyle12c595959Inter500,
                   ),
                 ],
               ),

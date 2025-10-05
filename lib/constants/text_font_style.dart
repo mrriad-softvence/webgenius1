@@ -173,5 +173,30 @@ static final textStyle14c595959Inter500 = GoogleFonts.inter(
     fontSize: 14.sp,
     fontWeight: FontWeight.w500,
   );
+static final textStyle18c141414Inter600 = GoogleFonts.inter(
+    color: AppColors.c141414,
+    fontSize: 18.sp,
+    fontWeight: FontWeight.w600,
+  );
+static final textStyle14c4B5563Inter400 = GoogleFonts.inter(
+    color: AppColors.c4B5563,
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w400,
+  );
+static final textStyle14cFFFFFFInter400 = GoogleFonts.inter(
+    color: AppColors.cFFFFFF,
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w400,
+  );
+static final textStyle16c262626Inter700 = GoogleFonts.inter(
+    color: AppColors.c262626,
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w700,
+  );
+static final textStyle16cFFFFFFInter700 = GoogleFonts.inter(
+    color: AppColors.cFFFFFF,
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w700,
+  );
 
 }

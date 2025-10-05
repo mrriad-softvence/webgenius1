@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'WebGenius',
-          home: SignupScreen1(),
+          home: LoginScreen(),
           routes: <String, WidgetBuilder>{
             'vendor':(context)=>VendorProfileScreen(),
             'productDtails':(context)=> ProductDetailsScreen()

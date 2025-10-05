@@ -53,8 +53,11 @@ class AppColors {
   /// Color: #FF35D239
   static const Color c35D239 = Color(0xFF35D239);
 
-  /// Color: #FFc374151
-  static const Color c374151 = Color(0xFFC374151);
+  /// Color: #FF374151
+  static const Color c374151 = Color(0xFF374151);
+
+  /// Color: #FF4B5563
+  static const Color c4B5563 = Color(0xFF4B5563);
 
   /// Color: #FF4E2C11
   static const Color c4E2C11 = Color(0xFF4E2C11);
@@ -100,6 +103,9 @@ class AppColors {
 
   /// Color: #FFE3E7EC
   static const Color cE3E7EC = Color(0xFFE3E7EC);
+
+  /// Color: #FFE5E7EB
+  static const Color cE5E7EB = Color(0xFFE5E7EB);
 
   /// Color: #FFE6FAE7
   static const Color cE6FAE7 = Color(0xFFE6FAE7);

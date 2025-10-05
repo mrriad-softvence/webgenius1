@@ -1,25 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:webgenius/common_widgets/custom_button.dart';
+import 'package:webgenius/fetures/signup/presentation/signup_screen1.dart';
+import 'package:webgenius/fetures/signup/presentation/signup_screen3.dart';
 import 'package:webgenius/fetures/signup/presentation/widgets/collapsible_upload_field.dart';
 import 'package:webgenius/fetures/signup/presentation/widgets/custom_checkbox.dart';
 import 'package:webgenius/fetures/signup/presentation/widgets/custom_dropdown.dart';
+import 'package:webgenius/fetures/signup/presentation/widgets/custom_signup_button.dart';
 import 'package:webgenius/fetures/signup/presentation/widgets/file_upload_section.dart';
+import 'package:webgenius/fetures/signup/presentation/widgets/step_procss_indicator.dart';
 import 'package:webgenius/helper/ui_helper.dart';
 
+import '../../../constants/text_font_style.dart';
+import '../../../gen/assets.gen.dart';
 import '../../../gen/colors.gen.dart';
 
-class SignupScreen extends StatefulWidget {
-  const SignupScreen({super.key});
+class SignupScreen2 extends StatefulWidget {
+  const SignupScreen2({super.key});
 
   @override
-  State<SignupScreen> createState() => _SignupScreenState();
+  State<SignupScreen2> createState() => _SignupScreen2State();
 }
 
-class _SignupScreenState extends State<SignupScreen> {
+class _SignupScreen2State extends State<SignupScreen2> {
   // Form state
   String? selectedVehicle;
   String? activeUploadField;
   bool agreeToTerms = false;
+  int currentStep = 2;
 
   final List<String> vehicleTypes = ['Motorcycle', 'Bicyle', 'Scooter', 'Car'];
 
@@ -38,13 +46,54 @@ class _SignupScreenState extends State<SignupScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.allPrimaryColor,
-      appBar: AppBar(title: const Text('Vehicle & Location')),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              UIHelper.verticalSpace(60.h),
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    Assets.icons.tiffynLogo.path,
+                    height: 36.h,
+                    width: 36.w,
+                  ),
+                  UIHelper.horizontalSpace(12),
+                  Text(
+                    "tiffyn",
+                    style: TextFontStyle.textStyle24c000000Inter600,
+                  ),
+                ],
+              ),
+
+              UIHelper.verticalSpace(40.h),
+
+              Text(
+                "Become a Delivery  Partner",
+                style: TextFontStyle.textStyle18c141414Inter600,
+              ),
+              UIHelper.verticalSpace(12.h),
+              Text(
+                "Grow your business on our platform",
+                style: TextFontStyle.textStyle12c595959Inter500,
+              ),
+              UIHelper.verticalSpace(16.h),
+
+              // Step Progress Indicator
+              StepProgressIndicator(
+                currentStep: currentStep,
+                totalSteps: 3,
+                activeColor: AppColors.cFF2626,
+                inactiveColor: AppColors.cE5E7EB,
+              ),
+
+              UIHelper.verticalSpace(16.h),
+
+              Text("Vehicle & Location"),
               // Vehicle Type Dropdown
               CustomDropdown(
                 label: 'Vehicle Type',
@@ -99,6 +148,54 @@ class _SignupScreenState extends State<SignupScreen> {
                 label: 'I agree to the Terms of Service and Privacy Policy',
                 onChanged: (value) => setState(() => agreeToTerms = value),
               ),
+              
+              UIHelper.verticalSpace(16.h),
+
+              Row(
+                children: [
+                  Expanded(
+                    child: CustomSignupButton(
+                      text: "Previous",
+                      isFilled: false,
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                    ),
+                  ),
+                  UIHelper.horizontalSpace(30.w),
+                  Expanded(
+                    child: CustomSignupButton(
+                      text: "Create Account",
+                      isFilled: true,
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => SignupScreen3()),
+                        );
+                      },
+                    ),
+                  ),
+                ],
+              ),
+
+              UIHelper.verticalSpace(16.h),
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Already have an account? ",
+                    style: TextFontStyle.textStyle12c595959Inter500,
+                  ),
+                  GestureDetector(
+                    child: Text(
+                      "Log in",
+                      style: TextFontStyle.textStyle12cFF1414Inter500,
+                    ),
+                  ),
+                ],
+              ),
+
             ],
           ),
         ),

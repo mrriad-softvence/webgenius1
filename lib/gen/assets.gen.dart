@@ -30,6 +30,10 @@ class $AssetsIconsGen {
   /// File path: assets/icons/Plus.png
   AssetGenImage get plus => const AssetGenImage('assets/icons/Plus.png');
 
+  /// File path: assets/icons/User_light.png
+  AssetGenImage get userLight =>
+      const AssetGenImage('assets/icons/User_light.png');
+
   /// File path: assets/icons/arrow-left_icon.png
   AssetGenImage get arrowLeftIconPng =>
       const AssetGenImage('assets/icons/arrow-left_icon.png');
@@ -67,6 +71,10 @@ class $AssetsIconsGen {
   /// File path: assets/icons/loccation_icon.png
   AssetGenImage get loccationIcon =>
       const AssetGenImage('assets/icons/loccation_icon.png');
+
+  /// File path: assets/icons/lock_icon.png
+  AssetGenImage get lockIcon =>
+      const AssetGenImage('assets/icons/lock_icon.png');
 
   /// File path: assets/icons/mage_eye-off_icon.png
   AssetGenImage get mageEyeOffIcon =>
@@ -112,6 +120,7 @@ class $AssetsIconsGen {
   List<dynamic> get values => [
     minus,
     plus,
+    userLight,
     arrowLeftIconPng,
     arrowLeftIconPng_,
     backbuttonIcon,
@@ -122,6 +131,7 @@ class $AssetsIconsGen {
     forward,
     googleIcon,
     loccationIcon,
+    lockIcon,
     mageEyeOffIcon,
     messageIcon,
     notificationIcon,
