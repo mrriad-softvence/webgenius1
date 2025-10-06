@@ -116,6 +116,10 @@ class $AssetsIconsGen {
   AssetGenImage get vendorIcon =>
       const AssetGenImage('assets/icons/vendor_icon.png');
 
+  /// File path: assets/icons/warning_icon.png
+  AssetGenImage get warningIcon =>
+      const AssetGenImage('assets/icons/warning_icon.png');
+
   /// List of all assets
   List<dynamic> get values => [
     minus,
@@ -142,6 +146,7 @@ class $AssetsIconsGen {
     tiffynLogo,
     timeIcon,
     vendorIcon,
+    warningIcon,
   ];
 }
 

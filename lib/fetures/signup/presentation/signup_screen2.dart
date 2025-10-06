@@ -93,7 +93,8 @@ class _SignupScreen2State extends State<SignupScreen2> {
 
               UIHelper.verticalSpace(16.h),
 
-              Text("Vehicle & Location"),
+              Text("Vehicle & Location",style: TextFontStyle.textStyle16c141414Inter600,),
+              UIHelper.verticalSpace(16.h),
               // Vehicle Type Dropdown
               CustomDropdown(
                 label: 'Vehicle Type',

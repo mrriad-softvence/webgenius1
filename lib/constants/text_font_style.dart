@@ -198,5 +198,15 @@ static final textStyle16cFFFFFFInter700 = GoogleFonts.inter(
     fontSize: 16.sp,
     fontWeight: FontWeight.w700,
   );
+static final textStyle16c141414Inter600 = GoogleFonts.inter(
+    color: AppColors.c141414,
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w600,
+  );
+static final textStyle10c595959Inter600 = GoogleFonts.inter(
+    color: AppColors.c595959,
+    fontSize: 10.sp,
+    fontWeight: FontWeight.w600,
+  );
 
 }
