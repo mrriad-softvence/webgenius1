@@ -19,7 +19,7 @@ class SignupScreen3 extends StatefulWidget {
 }
 
 class _SignupScreen3State extends State<SignupScreen3> {
-  int currentStep = 2;
+  int currentStep = 3;
   bool agreeToTerms = false;
   @override
   Widget build(BuildContext context) {

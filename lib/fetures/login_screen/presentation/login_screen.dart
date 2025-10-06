@@ -136,13 +136,13 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
 
                 child: Padding(
-                  padding: EdgeInsets.all(10),
+                  padding: EdgeInsets.all(10.sp),
                   child: Row(
                     children: [
                       Image.asset(
                         Assets.icons.googleIcon.path,
-                        height: 24,
-                        width: 24,
+                        height: 24.h,
+                        width: 24.h,
                       ),
                       UIHelper.horizontalSpace(10.w),
                       Text(
@@ -183,6 +183,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   Widget _buildRoleChip(String role, String imagePath) {
     bool isSelected = _selectedRole == role;
+
     return GestureDetector(
       onTap: () {
         setState(() {

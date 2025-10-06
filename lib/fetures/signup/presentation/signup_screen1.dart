@@ -26,7 +26,7 @@ class _SignupScreen1State extends State<SignupScreen1> {
   bool isExpanded = false;
 
 
-  int currentStep = 2;
+  int currentStep = 1;
 
   @override
   Widget build(BuildContext context) {

@@ -22,7 +22,6 @@ class StepProgressIndicator extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: List.generate(totalSteps * 2 - 1, (index) {
-        // Circle item
         if (index.isEven) {
           int step = (index ~/ 2) + 1;
           bool isActive = step <= currentStep;

@@ -41,11 +41,12 @@ class CustomTextFormField extends StatelessWidget {
           UIHelper.verticalSpace(8.h),
         ],
         Container(
-          height: 52.h,
+          height: 40.h,
           width: double.infinity,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8.r),
             color: AppColors.cF0F0F0,
+            border: Border.all()
           ),
           child: Center(
             child: TextFormField(
@@ -58,7 +59,6 @@ class CustomTextFormField extends StatelessWidget {
                 isDense: true,
                 contentPadding: EdgeInsets.symmetric(
                   vertical: 12.h,
-                  horizontal: 12.w,
                 ),
                 hintText: hintText,
                 hintStyle: TextFontStyle.textStyle14c595959Inter600,
