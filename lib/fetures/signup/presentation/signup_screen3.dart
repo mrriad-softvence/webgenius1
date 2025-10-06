@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:webgenius/common_widgets/custom_button.dart';
+import 'package:webgenius/fetures/login_screen/presentation/login_screen.dart';
 import 'package:webgenius/fetures/signup/presentation/widgets/custom_checkbox.dart';
 import 'package:webgenius/fetures/signup/presentation/widgets/custom_signup_button.dart';
 import 'package:webgenius/fetures/signup/presentation/widgets/step_procss_indicator.dart';
@@ -168,6 +169,14 @@ class _SignupScreen3State extends State<SignupScreen3> {
                     style: TextFontStyle.textStyle12c595959Inter500,
                   ),
                   GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => LoginScreen(),
+                        ),
+                      );
+                    },
                     child: Text(
                       "Log in",
                       style: TextFontStyle.textStyle12cFF1414Inter500,

@@ -9,6 +9,7 @@ import 'package:webgenius/helper/ui_helper.dart';
 
 import '../../../gen/assets.gen.dart';
 import '../../../gen/colors.gen.dart';
+import '../../login_screen/presentation/login_screen.dart';
 
 class SignupScreen1 extends StatefulWidget {
   const SignupScreen1({super.key});
@@ -157,6 +158,14 @@ class _SignupScreen1State extends State<SignupScreen1> {
                     style: TextFontStyle.textStyle12c595959Inter500,
                   ),
                   GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => LoginScreen(),
+                        ),
+                      );
+                    },
                     child: Text(
                       "Log in",
                       style: TextFontStyle.textStyle12cFF1414Inter500,

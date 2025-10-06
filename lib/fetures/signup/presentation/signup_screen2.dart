@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:webgenius/common_widgets/custom_button.dart';
+import 'package:webgenius/fetures/login_screen/presentation/login_screen.dart';
 import 'package:webgenius/fetures/signup/presentation/signup_screen1.dart';
 import 'package:webgenius/fetures/signup/presentation/signup_screen3.dart';
 import 'package:webgenius/fetures/signup/presentation/widgets/collapsible_upload_field.dart';
@@ -189,6 +190,14 @@ class _SignupScreen2State extends State<SignupScreen2> {
                     style: TextFontStyle.textStyle12c595959Inter500,
                   ),
                   GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => LoginScreen(),
+                        ),
+                      );
+                    },
                     child: Text(
                       "Log in",
                       style: TextFontStyle.textStyle12cFF1414Inter500,
